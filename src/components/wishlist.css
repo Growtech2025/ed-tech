@@ -1,0 +1,46 @@
+.wishlist-page {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.wishlist-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.wishlist-card img {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.wishlist-info {
+  flex-grow: 1;
+}
+
+.wishlist-info h3 {
+  margin: 0 0 10px;
+}
+
+.heart-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e74c3c;
+  transition: transform 0.2s;
+}
+
+.heart-btn:hover {
+  transform: scale(1.2);
+}
