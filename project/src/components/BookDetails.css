@@ -1,0 +1,132 @@
+/* Full page background */
+.book-detail-page {
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Wrapper card */
+.book-detail-wrapper {
+  background: #fff;
+  display: flex;
+  gap: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* Image */
+.book-image-section img {
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Info */
+.book-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Title */
+.book-info-section h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #222;
+}
+
+/* Description */
+.description {
+  font-size: 17px;
+  color: #333;
+  line-height: 1.8;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+/* Meta info */
+.book-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Tags */
+.book-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.book-tags span {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+
+.back-button {
+  margin-top: 20px;
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #0056b3;
+}
+.details-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.add-cart-btn {
+  background: linear-gradient(to right, #1f2937, #4b5563);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-cart-btn:hover {
+  background: linear-gradient(to right, #374151, #6b7280);
+  transform: translateY(-2px);
+}
+.book-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center; /* ✅ Center all inner content */
+  text-align: center;
+}
