@@ -1,0 +1,140 @@
+.main{ width: 98vw;
+    height: 91.4vh;
+    padding-top: 50px;
+}
+
+.subscription-card {
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+
+  overflow: hidden;
+  /* Use your chosen image */
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdM9fjdVodH16zZPSlenJ-yr70rCvdKHRUSGLK4Cj1h3BSw1Tj6FtFXKE&s');
+  background-size:410px;
+  background-position: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Dark overlay for text readability */
+
+
+.subscription-card * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.plan-title {
+  font-size: 24px;
+  color: #4a3aff;
+  margin-bottom: 10px;
+}
+
+.plan-description {
+  color: white;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.price-period {
+  font-size: 14px;
+  color: white;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+.features li {
+  margin: 8px 0;
+}
+
+.subscribe-btn {
+  background-color: #4a3aff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #3729d6;
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+/* Order Form CSS*/
+.BOxDiv{
+width: 98vw;
+    height: 91.4vh;
+    background-color: rgb(0, 0, 0);
+    overflow-y: hidden;
+background: transparent;
+    padding-top: 50px;
+}
+.order-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #d2f5cf;
+  text-align: center;
+  font-family: Arial;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a3aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3729d6;
+}
+
+.notification {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #333;
+  padding: 12px;
+  background-color: #e0ffe0;
+  border: 1px solid #00cc00;
+  border-radius: 8px;
+}
