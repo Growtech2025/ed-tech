@@ -26,82 +26,84 @@ const Dashboard = () => {
   const COLORS = ['#6366F1', '#34D399'];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gradient-to-br from-gray-50 to-white min-h-screen">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-white min-h-screen">
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-8 text-center">
         📊 Your Dashboard
       </h1>
 
-      {/* User Info */}
-      <div className="bg-white p-6 rounded-2xl shadow-md mb-8 hover:shadow-lg transition">
-        <h2 className="text-2xl font-semibold text-blue-600 mb-4">👤 User Info</h2>
-        <div className="grid sm:grid-cols-2 gap-4 text-gray-700 text-lg">
-          <p><strong>Name:</strong> {userData.name}</p>
-          <p><strong>Email:</strong> {userData.email}</p>
-          <p><strong>Total Spent:</strong> ₹{userData.totalSpent}</p>
-          <p><strong>Books:</strong> {userData.booksPurchased}</p>
-          <p><strong>Courses:</strong> {userData.coursesPurchased}</p>
+      <div className="space-y-8">
+        {/* User Info */}
+        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+          <h2 className="text-2xl font-semibold text-blue-600 mb-4">👤 User Info</h2>
+          <div className="grid sm:grid-cols-2 gap-4 text-gray-700 text-base sm:text-lg">
+            <p><strong>Name:</strong> {userData.name}</p>
+            <p><strong>Email:</strong> {userData.email}</p>
+            <p><strong>Total Spent:</strong> ₹{userData.totalSpent}</p>
+            <p><strong>Books:</strong> {userData.booksPurchased}</p>
+            <p><strong>Courses:</strong> {userData.coursesPurchased}</p>
+          </div>
         </div>
-      </div>
 
-      {/* Pie Chart */}
-      <div className="bg-white p-6 rounded-2xl shadow-md mb-8 hover:shadow-lg transition">
-        <h2 className="text-2xl font-semibold text-blue-600 mb-6">📈 Purchase Breakdown</h2>
-        <div className="flex justify-center">
-          <PieChart width={300} height={300}>
-            <Pie
-              data={pieData}
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              fill="#8884d8"
-              dataKey="value"
-              label
-            >
-              {pieData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend />
-          </PieChart>
+        {/* Pie Chart */}
+        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+          <h2 className="text-2xl font-semibold text-blue-600 mb-6">📈 Purchase Breakdown</h2>
+          <div className="w-full flex justify-center overflow-x-auto">
+            <PieChart width={280} height={280}>
+              <Pie
+                data={pieData}
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+                fill="#8884d8"
+                dataKey="value"
+                label
+              >
+                {pieData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </div>
         </div>
-      </div>
 
-      {/* Purchase History */}
-      <div className="bg-white p-6 rounded-2xl shadow-md mb-8 hover:shadow-lg transition">
-        <h2 className="text-2xl font-semibold text-blue-600 mb-4">🕘 Spend History</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-left border-collapse">
-            <thead className="bg-gray-100 text-gray-700">
-              <tr>
-                <th className="p-3 font-medium">Type</th>
-                <th className="p-3 font-medium">Title</th>
-                <th className="p-3 font-medium">Amount (₹)</th>
-                <th className="p-3 font-medium">Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {activityHistory.map((item, index) => (
-                <tr key={index} className="border-b hover:bg-gray-50 transition">
-                  <td className="p-3">{item.type}</td>
-                  <td className="p-3">{item.title}</td>
-                  <td className="p-3">₹{item.amount}</td>
-                  <td className="p-3">{item.date}</td>
+        {/* Purchase History */}
+        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+          <h2 className="text-2xl font-semibold text-blue-600 mb-4">🕘 Spend History</h2>
+          <div className="overflow-x-auto rounded-lg">
+            <table className="min-w-[600px] w-full text-sm">
+              <thead className="bg-gray-100 text-gray-700">
+                <tr>
+                  <th className="p-3 font-medium">Type</th>
+                  <th className="p-3 font-medium">Title</th>
+                  <th className="p-3 font-medium">Amount (₹)</th>
+                  <th className="p-3 font-medium">Date</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {activityHistory.map((item, index) => (
+                  <tr key={index} className="border-b hover:bg-gray-50 transition">
+                    <td className="p-3">{item.type}</td>
+                    <td className="p-3">{item.title}</td>
+                    <td className="p-3">₹{item.amount}</td>
+                    <td className="p-3">{item.date}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
 
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow-md transition">
-          👤 View Profile
-        </button>
-        <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl shadow-md transition">
-          ⬇️ Download Report
-        </button>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow-md transition">
+            👤 View Profile
+          </button>
+          <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl shadow-md transition">
+            ⬇️ Download Report
+          </button>
+        </div>
       </div>
     </div>
   );
