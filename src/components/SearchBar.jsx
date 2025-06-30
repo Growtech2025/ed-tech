@@ -1,20 +1,30 @@
-// src/components/SearchBar.jsx
+
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [query, setQuery] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get("q") || "";
+  });
 
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
-      if (query.trim() !== "") {
-        navigate(`/search?q=${query}`);
+      const trimmedQuery = query.trim();
+
+      if (trimmedQuery !== "") {
+        navigate(`/search?q=${trimmedQuery}`);
+      } else if (location.pathname === "/search") {
+        // If on /search and input is empty, reset the results
+        navigate("/search");
       }
     }, 300);
 
     return () => clearTimeout(delayDebounce);
-  }, [query]);
+  }, [query, navigate, location]);
 
   return (
     <input
