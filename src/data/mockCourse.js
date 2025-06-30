@@ -9,7 +9,7 @@ export const mockCourse = {
             isCompleted: false,
             subtopics: [{
                     id: 'subtopic-1-1',
-                    title: 'HTML s',
+                    title: 'HTML & CSS Basics',
                     isCompleted: false,
                     lessons: [{
                             id: 'lesson-1-1-1',

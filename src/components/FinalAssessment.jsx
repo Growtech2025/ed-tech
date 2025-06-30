@@ -12,7 +12,7 @@ const FinalAssessmentComponent = ({
   onComplete, 
   onClose, 
   courseTitle,
-  studentName = "John Doe" 
+  studentName = "Aviraj" 
 }) => {
   const dispatch = useAppDispatch();
   const attempts = useAppSelector(selectFinalAssessmentAttempts);
@@ -48,14 +48,14 @@ const FinalAssessmentComponent = ({
         ],
         correctAnswer: 'Hyper Text Markup Language - for structuring web content'
       },
-      {
-        id: 'final-q2',
-        question: 'Create a complete HTML document with a title "Final Test" and a heading saying "Web Development Quiz"',
-        type: 'coding',
-        code: '<!-- Write your complete HTML document here -->',
-        language: 'html',
-        correctAnswer: '<!DOCTYPE html>\n<html>\n<head>\n<title>Final Test</title>\n</head>\n<body>\n<h1>Web Development Quiz</h1>\n</body>\n</html>'
-      },
+      // {
+      //   id: 'final-q2',
+      //   question: 'Create a complete HTML document with a title "Final Test" and a heading saying "Web Development Quiz"',
+      //   type: 'coding',
+      //   code: '<!-- Write your complete HTML document here -->',
+      //   language: 'html',
+      //   correctAnswer: '<!DOCTYPE html>\n<html>\n<head>\n<title>Final Test</title>\n</head>\n<body>\n<h1>Web Development Quiz</h1>\n</body>\n</html>'
+      // },
       {
         id: 'final-q3',
         question: 'Which HTML element is used for the largest heading?',
@@ -64,14 +64,14 @@ const FinalAssessmentComponent = ({
         correctAnswer: '<h1>'
       },
       // CSS Questions
-      {
-        id: 'final-q4',
-        question: 'Write CSS to create a flexbox container that centers its content both horizontally and vertically',
-        type: 'coding',
-        code: '/* Write your CSS here */\n.container {\n  \n}',
-        language: 'css',
-        correctAnswer: '.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}'
-      },
+      // {
+      //   id: 'final-q4',
+      //   question: 'Write CSS to create a flexbox container that centers its content both horizontally and vertically',
+      //   type: 'coding',
+      //   code: '/* Write your CSS here */\n.container {\n  \n}',
+      //   language: 'css',
+      //   correctAnswer: '.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}'
+      // },
       {
         id: 'final-q5',
         question: 'What does the CSS Box Model consist of?',
@@ -85,14 +85,14 @@ const FinalAssessmentComponent = ({
         correctAnswer: 'Content, Padding, Border, Margin'
       },
       // JavaScript Questions
-      {
-        id: 'final-q6',
-        question: 'Create a JavaScript function that takes an array of numbers and returns the sum of all elements',
-        type: 'coding',
-        code: '// Write your function here\nfunction sumArray(numbers) {\n  \n}',
-        language: 'javascript',
-        correctAnswer: 'function sumArray(numbers) {\n  return numbers.reduce((sum, num) => sum + num, 0);\n}'
-      },
+      // {
+      //   id: 'final-q6',
+      //   question: 'Create a JavaScript function that takes an array of numbers and returns the sum of all elements',
+      //   type: 'coding',
+      //   code: '// Write your function here\nfunction sumArray(numbers) {\n  \n}',
+      //   language: 'javascript',
+      //   correctAnswer: 'function sumArray(numbers) {\n  return numbers.reduce((sum, num) => sum + num, 0);\n}'
+      // },
       {
         id: 'final-q7',
         question: 'What is the difference between let, const, and var in JavaScript?',
@@ -105,15 +105,15 @@ const FinalAssessmentComponent = ({
         ],
         correctAnswer: 'let and const have block scope, var has function scope'
       },
-      {
-        id: 'final-q8',
-        question: 'Write JavaScript code to add a click event listener to all buttons that shows an alert with "Button clicked!"',
-        type: 'coding',
-        code: '// Write your event listener code here\n',
-        language: 'javascript',
-        correctAnswer: 'document.querySelectorAll("button").forEach(button => {\n  button.addEventListener("click", () => {\n    alert("Button clicked!");\n  });\n});'
-      },
-      // React Questions
+      // {
+      //   id: 'final-q8',
+      //   question: 'Write JavaScript code to add a click event listener to all buttons that shows an alert with "Button clicked!"',
+      //   type: 'coding',
+      //   code: '// Write your event listener code here\n',
+      //   language: 'javascript',
+      //   correctAnswer: 'document.querySelectorAll("button").forEach(button => {\n  button.addEventListener("click", () => {\n    alert("Button clicked!");\n  });\n});'
+      // },
+      // // React Questions
       {
         id: 'final-q9',
         question: 'What is JSX in React?',
@@ -126,14 +126,14 @@ const FinalAssessmentComponent = ({
         ],
         correctAnswer: 'JavaScript XML - a syntax extension for JavaScript'
       },
-      {
-        id: 'final-q10',
-        question: 'Create a React component that manages a todo list with add and remove functionality',
-        type: 'coding',
-        code: '// Complete the TodoList component\nimport { useState } from "react";\n\nfunction TodoList() {\n  const [todos, setTodos] = useState([]);\n  const [input, setInput] = useState("");\n  \n  // Add your functions here\n  \n  return (\n    <div>\n      {/* Add your JSX here */}\n    </div>\n  );\n}',
-        language: 'javascript',
-        correctAnswer: 'import { useState } from "react";\n\nfunction TodoList() {\n  const [todos, setTodos] = useState([]);\n  const [input, setInput] = useState("");\n  \n  const addTodo = () => {\n    if (input.trim()) {\n      setTodos([...todos, { id: Date.now(), text: input }]);\n      setInput("");\n    }\n  };\n  \n  const removeTodo = (id) => {\n    setTodos(todos.filter(todo => todo.id !== id));\n  };\n  \n  return (\n    <div>\n      <input value={input} onChange={(e) => setInput(e.target.value)} />\n      <button onClick={addTodo}>Add</button>\n      <ul>\n        {todos.map(todo => (\n          <li key={todo.id}>\n            {todo.text}\n            <button onClick={() => removeTodo(todo.id)}>Remove</button>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}'
-      },
+      // {
+      //   id: 'final-q10',
+      //   question: 'Create a React component that manages a todo list with add and remove functionality',
+      //   type: 'coding',
+      //   code: '// Complete the TodoList component\nimport { useState } from "react";\n\nfunction TodoList() {\n  const [todos, setTodos] = useState([]);\n  const [input, setInput] = useState("");\n  \n  // Add your functions here\n  \n  return (\n    <div>\n      {/* Add your JSX here */}\n    </div>\n  );\n}',
+      //   language: 'javascript',
+      //   correctAnswer: 'import { useState } from "react";\n\nfunction TodoList() {\n  const [todos, setTodos] = useState([]);\n  const [input, setInput] = useState("");\n  \n  const addTodo = () => {\n    if (input.trim()) {\n      setTodos([...todos, { id: Date.now(), text: input }]);\n      setInput("");\n    }\n  };\n  \n  const removeTodo = (id) => {\n    setTodos(todos.filter(todo => todo.id !== id));\n  };\n  \n  return (\n    <div>\n      <input value={input} onChange={(e) => setInput(e.target.value)} />\n      <button onClick={addTodo}>Add</button>\n      <ul>\n        {todos.map(todo => (\n          <li key={todo.id}>\n            {todo.text}\n            <button onClick={() => removeTodo(todo.id)}>Remove</button>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}'
+      // },
       // Node.js Questions
       {
         id: 'final-q11',
@@ -147,14 +147,14 @@ const FinalAssessmentComponent = ({
         ],
         correctAnswer: 'A JavaScript runtime built on Chrome\'s V8 engine'
       },
-      {
-        id: 'final-q12',
-        question: 'Create a Node.js Express route that handles POST requests to "/api/users" and responds with JSON',
-        type: 'coding',
-        code: '// Complete the Express route\nconst express = require("express");\nconst app = express();\n\n// Add your route here\n',
-        language: 'javascript',
-        correctAnswer: 'const express = require("express");\nconst app = express();\n\napp.use(express.json());\n\napp.post("/api/users", (req, res) => {\n  const userData = req.body;\n  res.json({ message: "User created", user: userData });\n});'
-      },
+      // {
+      //   id: 'final-q12',
+      //   question: 'Create a Node.js Express route that handles POST requests to "/api/users" and responds with JSON',
+      //   type: 'coding',
+      //   code: '// Complete the Express route\nconst express = require("express");\nconst app = express();\n\n// Add your route here\n',
+      //   language: 'javascript',
+      //   correctAnswer: 'const express = require("express");\nconst app = express();\n\napp.use(express.json());\n\napp.post("/api/users", (req, res) => {\n  const userData = req.body;\n  res.json({ message: "User created", user: userData });\n});'
+      // },
       // General Web Development
       {
         id: 'final-q13',
@@ -168,14 +168,14 @@ const FinalAssessmentComponent = ({
         ],
         correctAnswer: 'Flexible grids, flexible images, and media queries'
       },
-      {
-        id: 'final-q14',
-        question: 'Write CSS media query for mobile devices (max-width: 768px) that hides the sidebar',
-        type: 'coding',
-        code: '/* Write your media query here */\n',
-        language: 'css',
-        correctAnswer: '@media (max-width: 768px) {\n  .sidebar {\n    display: none;\n  }\n}'
-      },
+      // {
+      //   id: 'final-q14',
+      //   question: 'Write CSS media query for mobile devices (max-width: 768px) that hides the sidebar',
+      //   type: 'coding',
+      //   code: '/* Write your media query here */\n',
+      //   language: 'css',
+      //   correctAnswer: '@media (max-width: 768px) {\n  .sidebar {\n    display: none;\n  }\n}'
+      // },
       {
         id: 'final-q15',
         question: 'What is the most important consideration in modern web development?',
